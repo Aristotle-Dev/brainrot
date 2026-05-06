@@ -1,0 +1,60 @@
+html {
+  overflow-x: hidden;
+}
+
+
+h1 {
+
+    white-space: nowrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: h1move 30s linear infinite;
+    font-size: 20px;
+    font-family: "Comic Relief", monospace;
+    margin-bottom: 0px;
+}
+
+@keyframes h1move {
+  from {
+    transform: translateX(0px);
+  }
+  to {
+    transform: translateX(-1425px);
+  }
+}
+
+h2 {
+    margin-top: 0px;
+    color: red;
+    text-shadow: 1px 1px 1px black;
+    font-size: 100px;
+    font-family: "Comic Relief", monospace;
+    animation: h2bounce 1s cubic-bezier(0.0, 2.0, 0.0, 2) infinite;
+}
+
+@keyframes h2bounce {
+  from {
+    font-size: 100px;
+  }
+  to {
+    font-size: 95px;
+  }
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    min-height: 100vh;
+    background-image: linear-gradient(white, white, rgb(241, 243, 246));
+    max-width: 100%;
+    position: relative;
+    overflow-y: hidden;
+}
