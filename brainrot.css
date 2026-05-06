@@ -4,7 +4,6 @@ html {
 
 
 h1 {
-
     white-space: nowrap;
     display: flex;
     justify-content: center;
@@ -24,21 +23,33 @@ h1 {
   }
 }
 
+
 h2 {
-    margin-top: 0px;
+    margin-top: -10px;
+    padding: 10px;
     color: red;
     text-shadow: 1px 1px 1px black;
     font-size: 100px;
     font-family: "Comic Relief", monospace;
-    animation: h2bounce 1s cubic-bezier(0.0, 2.0, 0.0, 2) infinite;
+    animation: h2bounce 1s ease-in-out infinite;
+    overflow: hidden;
+    height: 100px;
+    margin-bottom: -10px;
+    background: linear-gradient(90deg, red 0%, orange 10%, yellow 30%, rgb(0, 255, 0) 50%,rgb(0, 213, 255) 70%,  blue 80%, rgb(255, 0, 255) 100%);
 }
 
+main{
+    font-size: 30px;
+}
 @keyframes h2bounce {
-  from {
+  0% {
     font-size: 100px;
   }
-  to {
+  50% {
     font-size: 95px;
+  }
+  100% {
+    font-size: 100px;
   }
 }
 
@@ -48,7 +59,42 @@ h2 {
   align-items: center;
 }
 
+.grid-container {
+  justify-content: center;
+
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  padding: 20px;
+  width: 100vh - padding;
+}
+ 
+.grid-item {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  align-content: center;
+  min-height: 200px;
+  width: min-height;
+  padding: 16px;
+  
+  
+  box-sizing: border-box;
+  border: 2px solid #000000;
+  border-radius: 50px;
+  background: linear-gradient(45deg, rgba(255, 0, 0, 0.1) 0%, rgba(255, 166, 0, 0.1) 10%, rgba(255, 255, 0, 0.1) 30%, rgb(0, 255, 0, 0.1) 50%,rgb(0, 213, 255, 0.1) 70%,  rgba(0, 0, 255, 0.1) 80%, rgb(255, 0, 255, 0.1) 100%);
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+img {
+  max-width: 280px;
+  max-height: 280px;
+  margin-bottom: 40px;
+}
+
 body {
+    font-family: "Montserrat", monospace;
     margin: 0;
     padding: 0;
     overflow-x: hidden;
@@ -57,4 +103,76 @@ body {
     max-width: 100%;
     position: relative;
     overflow-y: hidden;
+}
+
+ 
+.title-segments {
+
+  cursor: pointer;
+  user-select: none;
+  font-family: "Montserrat", monospace;
+  font-size: 24px;
+  font-weight: 700;
+  padding: 10px 30px;
+  background: linear-gradient(90deg, #f0f0f0, #e0e0e0);
+  border-left: 5px solid red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70vw;
+  max-width: 700px;
+  margin: 6px auto 0 auto;
+  gap: 10px;
+  box-sizing: border-box;
+
+}
+
+
+.title-segments:hover {
+  background: linear-gradient(90deg, #e8e8e8, #d4d4d4);
+}
+ 
+.title-segments::before {
+  content: "▶";
+  font-size: 14px;
+  transition: transform 0.25s ease;
+  display: inline-block;
+}
+ 
+.title-segments.open::before {
+  transform: rotate(90deg);
+}
+
+.title-segments.open + ul {
+  max-height: 2000vh;
+  padding: 10px 16px 10px 36px;
+}
+
+
+.title-segments + ul {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease, padding 0.25s ease;
+  padding: 0 16px 0 36px;
+  font-family: "Comic Relief", monospace;
+  font-size: 18px;
+  list-style: disc;
+  background-image: linear-gradient(45deg, rgba(255, 0, 0, 0.1) 0%, rgba(255, 166, 0, 0.1) 10%, rgba(255, 255, 0, 0.1) 30%, rgb(0, 255, 0, 0.1) 50%,rgb(0, 213, 255, 0.1) 70%,  rgba(0, 0, 255, 0.1) 80%, rgb(255, 0, 255, 0.1) 100%);
+  border-left: 5px solid #ccc;
+
+
+  margin: 0 auto;
+  width: 70vw;
+  max-width: 700px;
+  box-sizing: border-box;
+
+}
+
+code{
+  background-color: #00b3ff50;
+}
+
+footer{
+  text-align: right;
+
 }
